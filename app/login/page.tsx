@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import type { userType } from "../interface";
@@ -10,7 +10,7 @@ export default function Post() {
   const [password, setPassword] = useState("");
   const [response, setResponse] = useState<userType | null>(null);
 
-  const handleSubmit = async (event: any) => {
+  const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
 
     try {
