@@ -1,4 +1,4 @@
-import { NextRequest } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import UserClass from "../../class";
 import type { userType } from "@/app/interface";
 
@@ -15,5 +15,5 @@ const user = new UserClass(usersList);
 
 export async function POST(req: NextRequest) {
   const result = await user.login(req);
-  return Response.json(result);
+  return NextResponse.json(result);
 }

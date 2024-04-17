@@ -10,7 +10,6 @@ class UserClass {
 
   async login(request: NextRequest) {
     const { name, password } = await request.json();
-    console.log(btoa(password));
 
     const userIndex = this.users.findIndex(
       (u) => u.name === name && u.password === btoa(password) //? btoa tugasnya menconvert string->base64
